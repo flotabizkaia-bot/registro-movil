@@ -104,7 +104,7 @@ textarea{height:80px;resize:vertical}
 </div>
 
 <script>
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbz_7xtnPezgxL-U8vfr04xFkDcqTfW_BY8WsYPQrt3ux8mdjHzBYJek3ns57R3W4Fpo/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbw8s1qPISc3zhDYaSQYCTDsTQXRn3Dt1r0sc7Bawk8ySYViavB-qhuGdWsCNV-TDXqyNg/exec";
 
 function reproducirSonido(){const c=new (window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=800;g.gain.value=.1;o.start();g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.1);o.stop(c.currentTime+.1);}
 function hacerVibrar(id){const e=document.getElementById(id);if(!e)return;e.classList.add("vibrar");setTimeout(()=>e.classList.remove("vibrar"),300);}
@@ -143,7 +143,6 @@ async function enviarDatos(){
         });
         mostrarMensaje("exito","✅ DATOS GUARDADOS CORRECTAMENTE");
     } catch(err){
-        // Aunque haya error, si los datos se enviaron, limpiar igual
         mostrarMensaje("exito","✅ DATOS GUARDADOS CORRECTAMENTE");
     }
 }
